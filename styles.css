@@ -127,7 +127,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%) rotate(90deg);
     font-size: 20px;
-    color: cyan;
+    color: rgb(255, 247, 0);
     font-weight: bold;
     text-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.5);
   }
