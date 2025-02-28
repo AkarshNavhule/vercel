@@ -1,74 +1,83 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+    color: #0ff;
     text-align: center;
     padding: 50px;
-}
-
-@keyframes gradientAnimation {
+    overflow: auto;
+  }
+  
+  @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
     justify-content: center;
-}
-
-.clock {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    margin: 20px;
-    padding: 20px;
-    width: 200px;
-    height: 200px;
-    position: relative;
-    transition: transform 0.3s, background 0.3s;
-    border: 4px solid white;
-}
-
-.clock:hover {
-    transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-h1 {
-    font-size: 3em;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .grid-item {
+    text-align: center;
     margin-bottom: 20px;
+  }
+  
+  .clock {
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 20px;
+    width: 350px;
+    height: 350px;
+    position: relative;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    border: 4px solid cyan;
+    box-shadow: 0 0 20px cyan, 0 0 40px rgba(0, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  .clock:hover {
+    transform: scale(1.1);
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 30px cyan, 0 0 60px rgba(0, 255, 255, 0.5);
+  }
+  
+  h1 {
+    font-size: 6em;
+    margin-bottom: 40px;
     animation: fadeIn 2s ease-in-out;
-}
-
-h2 {
+    text-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  
+  h2 {
     font-size: 1.5em;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 20px;
     animation: slideIn 1s ease-in-out;
-    text-align: center;
-    width: 100%;
-}
-
-.time {
-    display: none;
-}
-
-.clock-face {
+    text-shadow: 0 0 10px cyan;
+  }
+  
+  .clock-face {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
-}
-
-.hand {
+  }
+  
+  .hand {
     width: 50%;
     height: 6px;
-    background: white;
+    background: cyan;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -76,55 +85,51 @@ h2 {
     transform: rotate(0deg);
     transition: all 0.05s;
     transition-timing-function: ease-in-out;
-}
-
-.hand.hour {
+    box-shadow: 0 0 5px cyan;
+  }
+  
+  .hand.hour {
     width: 35%;
     height: 8px;
-}
-
-.hand.minute {
+    background: #0ff;
+  }
+  
+  .hand.minute {
     width: 45%;
     height: 6px;
-}
-
-.hand.second {
+    background: #00e6e6;
+  }
+  
+  .hand.second {
     width: 50%;
     height: 4px;
     background: red;
-}
-
-@keyframes fadeIn {
+    box-shadow: 0 0 10px red;
+  }
+  
+  @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-@keyframes slideIn {
+  }
+  
+  @keyframes slideIn {
     from { transform: translateY(-20px); }
     to { transform: translateY(0); }
-}
-
-@keyframes pulse {
+  }
+  
+  @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
-}
-
-.numbers {
-    display: none;
-}
-
-header {
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-.digital-time {
+  }
+  
+  .digital-time {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(90deg);
     font-size: 20px;
-    color: black;
+    color: rgb(255, 247, 0);
     font-weight: bold;
-    text-align: center;
-} 
+    text-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  
